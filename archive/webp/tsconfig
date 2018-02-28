@@ -1,0 +1,88 @@
+# tsconfig jsx type awesomeTypescriptLoader
+{
+  "compilerOptions": {
+    "target": "es5",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "jsx": "preserve",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "allowSyntheticDefaultImports": true,
+      "sourceMap": true,
+      "noEmit": true,
+      "noEmitHelpers": true,
+      "strictNullChecks": false,
+      "lib": [
+        "dom",
+      "es6"
+      ],
+      "typeRoots": [
+        "node_modules/@types"
+      ],
+      "types": [
+        "node",
+      "source-map",
+      "uglify-js",
+      "webpack"
+      ]
+  },
+    "include": [
+      "types/*",
+    "src/**/*",
+    "node_modules/@types"
+    ],
+    "exclude": [
+      "node_modules",
+    "dist"
+    ],
+    "awesomeTypescriptLoaderOptions": {
+      "forkChecker": true,
+    }
+    "compileOnSave": false,
+      "buildOnSave": false,
+      "atom": {
+        "rewriteTsconfig": false
+      }
+}
+
+# tsconfig.webpack.json
+{
+  "compilerOptions": {
+    "target": "es5",
+      "module": "es2015",
+      "moduleResolution": "node",
+      "jsx": "preserve",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "allowSyntheticDefaultImports": true,
+      "sourceMap": true,
+      "noEmit": true,
+      "noEmitHelpers": true,
+      "strictNullChecks": false,
+      "lib": [
+        "es2015",
+      "dom"
+      ],
+      "typeRoots": [
+        "node_modules/@types"
+      ],
+      "types": [
+        "node"
+      ]
+  },
+    "exclude": [
+      "node_modules",
+    "dist",
+    "src/**/*.spec.ts",
+    "src/**/*.e2e.ts"
+    ],
+    "awesomeTypescriptLoaderOptions": {
+      "forkChecker": true,
+      "useWebpackText": true
+    },
+    "compileOnSave": false,
+    "buildOnSave": false,
+    "atom": {
+      "rewriteTsconfig": false
+    }
+}

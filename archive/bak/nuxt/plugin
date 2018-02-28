@@ -1,0 +1,32 @@
+# plugin no require Vue.use(PluginExample)
+nuxt.config.js
+module.exports = {
+  build: {
+    vendor: ['axios']
+  }
+}
+
+# plugin requires Vue.use(PluginExample)
+1) plugins/vue-notifications.js
+import Vue from 'vue'
+import VueNotifications from 'vue-notifications'
+
+Vue.use(VueNotifications)
+
+# if browser only: 
+1b)
+import Vue from 'vue'
+import VueNotifications from 'vue-notifications'
+
+if (process.BROWSER_BUILD) {
+  Vue.use(VueNotifications)
+}
+
+
+2) nuxt.config.js
+module.exports = {
+  build: {
+    vendor: ['vue-notifications']
+  },
+  plugins: ['~plugins/vue-notifications']
+}

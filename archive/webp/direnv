@@ -1,0 +1,8 @@
+
+# install direnv
+sudo apt-get install direnv
+
+# cd project root
+
+# list env variables
+printenv

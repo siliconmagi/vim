@@ -1,0 +1,9 @@
+# ion scripts
+1) v sc.ion
+2) enter commands:
+#!/home/ice/.cargo/bin/ion
+echo 'a'
+echo 'b'
+3) chmod 755 sc.ion
+4) v initrc
+5) path to script

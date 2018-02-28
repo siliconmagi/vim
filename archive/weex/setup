@@ -1,0 +1,5 @@
+# install toolkit
+npm install -g weex-toolkit
+
+# weex-pack
+npm install -g weexpack

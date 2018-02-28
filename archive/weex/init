@@ -1,0 +1,104 @@
+# Create new project in Android Studio
+Android Studio > File > New Project > Min SDK API 23
+
+# build.gradle (Project)
+dependencies {
+  classpath 'com.android.tools.build:gradle:2.2.3'
+}
+> Sync Gradle
+> DO NOT ACCEPT GRADLE UPDATE > Don't remind me again for this project
+
+# Include Weex Preqs and update SDK
+# build.gradle (App)
+
+android {
+  compileSdkVersion 23
+  buildToolsVersion "23.0.2"
+  defaultConfig {
+    applicationId "com.nightshell.proto"
+    minSdkVersion 14
+    targetSdkVersion 23
+    versionCode 1
+    versionName "1.0"
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    ndk {
+      abiFilters "x86"
+      abiFilters "armeabi"
+    }
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+dependencies {
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+  androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    exclude group: 'com.android.support', module: 'support-annotations'
+  })
+  compile 'com.android.support.constraint:constraint-layout:1.0.2'
+  compile 'com.android.support:recyclerview-v7:23.4.0'
+  compile 'com.android.support:support-v4:23.4.0'
+  compile 'com.android.support:appcompat-v7:23.4.0'
+  compile 'com.alibaba:fastjson:1.1.45'
+  compile 'com.taobao.android:weex_sdk:0.10.0@aar'
+  testCompile 'junit:junit:4.12'
+}
+
+# Remove roundIcon from AndroidManifest.xml
+android:roundIcon="@mipmap/ic_launcher_round"
+
+# Init Picture Download Interface
+# ImageAdapter.java
+package com.nightshell.proto;
+
+import android.widget.ImageView;
+
+import com.taobao.weex.adapter.IWXImgLoaderAdapter;
+import com.taobao.weex.common.WXImageStrategy;
+import com.taobao.weex.dom.WXImageQuality;
+
+public class ImageAdapter implements IWXImgLoaderAdapter {
+
+
+  @Override
+  public void setImage(String url, ImageView view, WXImageQuality quality, WXImageStrategy strategy) {
+    //To implement picture download interface, otherwise the picture can not be displayed.
+  }
+}
+
+# Init WXApplication 
+# WXApplication.java
+package com.nightshell.proto;
+
+import android.app.Application;
+
+import com.taobao.weex.InitConfig;
+import com.taobao.weex.WXSDKEngine;
+
+/**
+* Note: add android:name=".WXApplication"  into Manifest file
+* To implement ImageAdapter, otherwise the picture can not be downloaded
+* Gradle must add some dependencies, otherwise the initialization will fail.
+* compile 'com.android.support:recyclerview-v7:23.1.1'
+* compile 'com.android.support:support-v4:23.1.1'
+* compile 'com.android.support:appcompat-v7:23.1.1'
+* compile 'com.alibaba:fastjson:1.1.45'
+*/
+
+public class WXApplication extends Application {
+  @Override
+  public void onCreate() {
+    super.onCreate();
+    InitConfig config=new InitConfig.Builder().setImgAdapter(new ImageAdapter()).build();
+    WXSDKEngine.initialize(this,config);
+  }
+}
+
+# WXApplication to AndroidManifest.xml
+android:name=".WXApplication"
+
+

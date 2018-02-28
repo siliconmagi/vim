@@ -1,0 +1,18 @@
+[at-loader] Checking finished with 4 errors
+[at-loader] node_modules/styled-components/typings/styled-components.d.ts:2:10
+TS2305: Module '"/home/oak/proj/inf/violet/node_modules/styled-components/typings/styled-components"' has no exported member 'StatelessComponent'.
+
+[at-loader] node_modules/styled-components/typings/styled-components.d.ts:2:30
+TS2305: Module '"/home/oak/proj/inf/violet/node_modules/styled-components/typings/styled-components"' has no exported member 'ComponentClass'.
+
+[at-loader] node_modules/styled-components/typings/styled-components.d.ts:33:73
+TS2694: Namespace '"/home/oak/proj/inf/violet/node_modules/styled-components/typings/styled-components"' has no exported member 'HTMLProps'.
+
+[at-loader] node_modules/styled-components/typings/styled-components.d.ts:36:91
+TS2694: Namespace '"/home/oak/proj/inf/violet/node_modules/styled-components/typings/styled-components"' has no exported member 'SVGAttributes'.
+
+"baseUrl": "./",
+  "paths": {
+    "react": ["node_modules/styled-components/typings/styled-components.d.ts"],
+    "react-dom": ["node_modules/styled-components/typings/styled-components.d.ts"]
+  }

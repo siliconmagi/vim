@@ -1,0 +1,10 @@
+
+
+gzip -9 -n /home/oak/git/mazda/resources/public/js/compiled/app.js 
+
+mv /home/oak/git/mazda/resources/public/js/compiled/app.js.gz /home/oak/git/mazda/resources/public/js/compiled/app-a.js
+
+aws s3 cp file.js s3://nightshell-dev-s3-8n7y3sducxly --content-encoding 'gzip'
+
+# deploy function sls
+serverless deploy function -f home

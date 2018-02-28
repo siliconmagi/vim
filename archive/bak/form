@@ -1,0 +1,5 @@
+# vue form
+<form>
+<!-- input elements -->
+<button @click="submitData">Submit</button>
+</form>

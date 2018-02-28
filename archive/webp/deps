@@ -1,0 +1,8 @@
+# inferno deps
+ya mobx inferno-router inferno-mobx inferno-devtools inferno inferno-component history
+
+# aws deps
+ya https://github.com/aws/amazon-cognito-identity-js
+ya @types/aws-sdk
+
+

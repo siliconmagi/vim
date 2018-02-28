@@ -1,0 +1,156 @@
+# mui
+<link href="https://cdnjs.cloudflare.com/ajax/libs/muicss/0.9.3/css/mui.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/muicss/0.9.3/js/mui.min.js"></script>
+
+# jquery
+<link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+# snap.svg
+<script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script>
+
+# uikit
+# note jquery.min.js must be loaded first
+// in head
+<link href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/css/uikit.min.css" rel="stylesheet" type="text/css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/css/components/sticky.min.css" rel="stylesheet" type="text/css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/css/uikit.gradient.min.css" rel="stylesheet" type="text/css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/css/components/slideshow.gradient.min.css" rel="stylesheet" type="text/css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/css/components/dotnav.gradient.min.css" rel="stylesheet" type="text/css">
+
+// before end body
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/js/uikit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/js/components/sticky.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/js/core/offcanvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/js/components/slideshow.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/js/core/smooth-scroll.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/js/components/grid.min.js"></script>
+
+# download via curl
+curl https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js -o ./jquery.min.js;
+curl https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/js/uikit.min.js -o ./uikit.min.js;
+curl https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/js/components/sticky.min.js -o ./sticky.min.js;
+curl https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/js/core/offcanvas.min.js -o ./offcanvas.min.js;
+curl https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/js/components/slideshow.min.js -o ./slideshow.min.js;
+curl https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/js/core/smooth-scroll.min.js -o ./smooth-scroll.min.js
+
+curl https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/css/uikit.min.css -o ./uikit.min.css;
+curl https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/css/components/sticky.min.css -o ./sticky.min.css;
+curl https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/css/uikit.gradient.min.css -o ./uikit.gradient.min.css;
+curl https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/css/components/slideshow.gradient.min.css -o ./slideshow.gradient.min.css;
+curl https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/css/components/dotnav.gradient.min.css -o ./dotnav.gradient.min.css
+curl https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/css/components/slidenav.gradient.min.css -o ./slidenav.gradient.min.css
+
+curl https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js -o ./snap.svg-min.js;
+curl https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js -o ./jquery-ui.min.js;
+curl https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css -o ./jquery-ui.min.css;
+curl https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js -o ./modernizr.min.js;
+curl https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css -o ./normalize.min.css;
+curl https://www.google-analytics.com/analytics.js -o ./analytics.js
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+</script>
+
+curl https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/js/components/grid.min.js -o ./grid.min.js
+curl https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/js/core/grid.min.js -o ./grid.min.js
+
+curl https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css -o ./font-awesome.min.css
+curl https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2 -o ./fontawesome-webfont.woff2
+curl https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff -o ./fontawesome-webfont.woff
+curl https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf -o ./fontawesome-webfont.ttf
+curl https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf -o ./fontawesome-webfont.ttf
+
+curl https://js.stripe.com/v2/ -o ./stripe.min.js
+
+# html 5 boilerplate
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title></title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<!-- Place favicon.ico in the root directory -->
+
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/main.css">
+<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+<!-- Add your site or application content here -->
+<p>Hello world! This is HTML5 Boilerplate.</p>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-3.1.0.min.js"><\/script>')</script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+</body>
+</html>
+
+# local
+<link href="/uikit.min.css" rel="stylesheet" type="text/css">
+<link href="/uikit.gradient.min.css" rel="stylesheet" type="text/css">
+
+<!-- Favicons -->
+<link rel="shortcut icon" href="https://raw.githubusercontent.com/siliconmagi/pictures/master/favicon.ico">
+<link rel="icon" sizes="16x16 32x32 64x64" href="https://raw.githubusercontent.com/siliconmagi/pictures/master/favicon.ico">
+<link rel="icon" type="image/png" sizes="196x196" href="https://raw.githubusercontent.com/siliconmagi/pictures/master/favicon-192.png">
+<link rel="icon" type="image/png" sizes="160x160" href="https://raw.githubusercontent.com/siliconmagi/pictures/master/favicon-160.png">
+<link rel="icon" type="image/png" sizes="96x96" href="https://raw.githubusercontent.com/siliconmagi/pictures/master/favicon-96.png">
+<link rel="icon" type="image/png" sizes="64x64" href="https://raw.githubusercontent.com/siliconmagi/pictures/master/favicon-64.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/siliconmagi/pictures/master/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/siliconmagi/pictures/master/favicon-16.png">
+<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/siliconmagi/pictures/master/favicon-57.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://raw.githubusercontent.com/siliconmagi/pictures/master/favicon-114.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://raw.githubusercontent.com/siliconmagi/pictures/master/favicon-72.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://raw.githubusercontent.com/siliconmagi/pictures/master/favicon-144.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://raw.githubusercontent.com/siliconmagi/pictures/master/favicon-60.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://raw.githubusercontent.com/siliconmagi/pictures/master/favicon-120.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://raw.githubusercontent.com/siliconmagi/pictures/master/favicon-76.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://raw.githubusercontent.com/siliconmagi/pictures/master/favicon-152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/siliconmagi/pictures/master/favicon-180.png">
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="https://raw.githubusercontent.com/siliconmagi/pictures/master/favicon-144.png">
+<meta name="msapplication-config" content="https://raw.githubusercontent.com/siliconmagi/pictures/master/browserconfig.xml">
+
+<!-- JS scripts -->
+<script src="/jquery.min.js"></script>
+<script src="/uikit.min.js"></script>
+<script src="/offcanvas.min.js"></script>
+<script src="/smooth-scroll.min.js"></script>
+<script src="/grid.min.js"></script>
+<script src="/sticky.min"></script>
+<script src="/sticky.min"></script>
+<script src="/stripe.min.js"></script>
+
+# home
+<!-- CSS imports -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/css/uikit.min.css" rel="stylesheet" type="text/css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/css/uikit.gradient.min.css" rel="stylesheet" type="text/css">
+
+<!-- JS scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/js/uikit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/js/core/offcanvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/js/core/smooth-scroll.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/js/components/grid.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/js/components/sticky.min.js"></script>
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>

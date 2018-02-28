@@ -1,0 +1,8 @@
+# vuejs phonegap app
+vue init valnub/vue-framework7-webpack-template vue
+cd vue
+yarn
+yarn dev
+
+# media template
+38min 

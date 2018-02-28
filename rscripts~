@@ -1,0 +1,5 @@
+# regex scripts
+# files with string "world"
+# TRUE returns values
+# FALSE returns indices
+grep("world", object, value = TRUE)

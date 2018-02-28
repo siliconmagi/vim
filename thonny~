@@ -1,0 +1,2 @@
+# install thonny
+bash <(curl -s http://thonny.org/installer-for-linux)

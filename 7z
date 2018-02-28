@@ -1,0 +1,18 @@
+# zip multiple files
+7z a -tzip logs.zip 2*.log
+
+# make zip
+zip -r rmMail.zip CX
+
+# install unrar
+sudo apt install p7zip-full p7zip-rar
+
+# extract zip
+7z x file.zip
+
+# extract
+7z x test.rar -ofolder
+
+# unrar
+sudo apt install unrar
+unrar e file.rar ./dd

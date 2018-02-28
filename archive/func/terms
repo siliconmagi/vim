@@ -1,0 +1,57 @@
+# Immutability
+
+# Pure Functions
+1) for a valid input there is only one valid output (ex cos())
+- validity above is based on type
+- Ex. a pure function takes something of type string and returns something of type int
+2) pure functions do not modify variables out of their scope, they only work on the arguments passed to them
+- avoid using variables and instead use expressions
+3) In general functions that do not cause side effects are pure functions
+
+# Referentially Transparent
+- it is way to gauge the purity of functions
+- cos(pi) and i^2 will always be -1 these two are referenetially transparent, meaning they can be substituted for each other
+
+Example:
+function impure(str: string) {
+str = str + "Post"
+print(str)
+return(str)
+}
+# above we have modified the state of the input arguments, therefore it is an impure function
+# your object state should be under your control
+
+function pure(str: string) {
+return str + "Post"
+}
+
+Advantages:
+- consistent reproducible results
+- easier parallelization
+- memoization or caching
+- laziness
+- referential transparency
+
+# Type Strictness
+1) types are not classes
+2) Grouping of related values under a name
+- Int type groups all the mathematical integers.  Boolean groups true and false
+3) Provide compile time checks for correctness of the program
+- 5 plus dog will throw an error
+
+
+
+# Higher Order Functions
+
+# Recursion
+
+# No Side Effects
+
+# Category Theory
+
+# Lambda Calculus
+
+# Currying
+
+# Type Strictness
+

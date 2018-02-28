@@ -1,0 +1,10 @@
+
+# deps typescript
+yad awesome-typescript-loader ts-node tslint typescript @types/node @types/webpack @types/uglify-js @types/source-map
+
+# deps babel
+yad babel-loader babel-core babel-plugin-inferno babel-preset-stage-3 babel-preset-es2015
+
+
+# 
+

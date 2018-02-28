@@ -1,0 +1,10 @@
+# list packages
+conda list
+
+# update anaconda
+conda update conda
+conda update anaconda
+conda update spyder
+
+
+

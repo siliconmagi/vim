@@ -1,0 +1,84 @@
+# install preqs
+yad babel-preset-stage-0 babel-preset-latest serverless-plugin-optimize serverless-offline babel-plugin-transform-decorators-legacy
+
+# serverless.yml
+# Nightshell.com blog portfolio website 
+service: nightshell 
+
+plugins:
+  - serverless-offline
+  - serverless-plugin-optimize
+
+package:
+  individually: true
+
+custom:
+  serverless-offline:
+    babelOptions:
+      presets: ["latest", "stage-0"]
+  optimize:
+    debug: true
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+  region: us-east-1
+  stage: dev
+
+functions:
+  home:
+    handler: home.home
+    events:
+      - http:
+          method: get
+          path: /
+  stripe:
+    handler: stripe.stripe
+    events:
+      - http:
+          method: get
+          path: stripe 
+
+resources:
+  Resources:
+    s3:
+      Type: AWS::S3::Bucket
+      Properties:
+        AccessControl: PublicRead
+    bucketPolicy:
+      Type: AWS::S3::BucketPolicy
+      Properties:
+        Bucket:
+          Ref: s3
+        PolicyDocument:
+          Statement:
+            - Sid: PublicReadGetObject
+              Effect: Allow
+              Principal: "*"
+              Action:
+              - s3:GetObject
+              Resource:
+              - Fn::Join:
+                - ''
+                - - 'arn:aws:s3:::'
+                  - Ref: s3 
+                  - "/*"
+    cf:
+      Type: AWS::CloudFront::Distribution
+      Properties:
+        DistributionConfig:
+          Origins:
+          - DomainName:
+              Fn::GetAtt:
+              - s3
+              - DomainName
+            Id: myS3Origin
+            S3OriginConfig: {}
+          Enabled: 'true'
+          DefaultCacheBehavior:
+            TargetOriginId: myS3Origin
+            Compress: 'true'
+            ForwardedValues:
+              QueryString: 'false'
+            ViewerProtocolPolicy: allow-all
+

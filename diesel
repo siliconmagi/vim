@@ -1,0 +1,33 @@
+# create new role
+sudo -u postgres psql
+CREATE USER palantir WITH CREATEDB PASSWORD 'LOTR';
+
+# Psql assumes db has same name as role used to login
+# create db name matching role created above
+sudo -u postgres createdb palantir
+
+# new project
+cargo new palantir
+
+# v .env
+[dependencies]
+diesel = { version = "0.11.0", features = ["postgres"] }
+diesel_codegen = { version = "0.11.0", features = ["postgres"] }
+dotenv = "0.8.0"
+
+# build
+cargo build
+
+# Setup db with info above:
+# echo DATABASE_URL=postgres://username:password/diesel_demo > .env ]
+echo DATABASE_URL=postgres://palantir:LOTR@localhost/palantir > .env
+
+# setup
+diesel setup
+
+# create migration for table
+# migrations allow an evolving database over time
+# each migration can be applied (up.sql) and reverted (down.sql)
+diesel migration generate create_posts
+
+

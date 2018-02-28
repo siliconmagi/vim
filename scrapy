@@ -1,0 +1,12 @@
+# python scrapy
+scrapy shell  https://www.youtube.com/channel/UCYb6YWTBfD0EB53shkN_6vA/videos --nolog
+
+# print response
+print(response.text)
+
+# selectors
+response.selector.xpath('//a/@href').extract()
+response.selector.xpath('//a/@href[contains(@href, "watch")]').extract()
+
+# select anchor tag href values containing 'watch'
+response.selector.xpath('//a/@href').re(r'watch.*')

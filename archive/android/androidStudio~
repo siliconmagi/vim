@@ -1,0 +1,65 @@
+# to update, adjust file permission
+sudo chmod -R 777 /usr/local/bin/android-studio
+
+# return file permission back to original state
+sudo chmod -R 775 /usr/local/bin/android-studio
+
+# Android Studio 2.3 install Ubuntu 16.10
+# install preqs
+# sudo apt install -y gcc-multilib g++-multilib libc6-dev-i386 qemu-kvm mesa-utils
+# Android Studio 2.3 settings rm -r to reset
+~/.AndroidStudio2.3
+
+# Download latest Android Studio
+https://developer.android.com/studio/index.html
+
+# preqs oracle jdk 8 must be installed
+javac -version
+javac 1.8.0_121
+
+# install preqs for x64
+sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386
+
+# install preqs for kvm
+sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils
+
+# unzip to usr/local/bin
+sudo unzip ~/Downloads/android-studio-ide-162.3764568-linux.zip -d /usr/local/bin
+
+# use install script
+/usr/local/bin/android-studio/bin/studio.sh
+
+# install android KVM for linux (speeds up virtual machine)
+# check hardware if n > 1, support is available
+egrep -c '(vmx|svm)' /proc/cpuinfo
+sudo apt-get install cpu-checker
+kvm-ok
+sudo adduser oak kvm
+sudo adduser oak libvirt
+
+# after installation kvm*
+relogin
+
+# verify 
+sudo virsh -c qemu:///system list
+# this means success
+ Id    Name                           State
+----------------------------------------------------
+
+# open android studio and enable kvm
+Run > Edit Configurations
+
+# run emulator in terminal
+LD_LIBRARY_PATH=path/to/sdk/tools/lib64 ./emulator64-x86 -avd Nexus_5_API_21 -qemu -m 2047 -enable-kvm
+env LD_LIBRARY_PATH=/home/oak/Qt5.7.1/5.7/gcc_64/lib/libQt5CLucene.so.5.7 ./emulator64-x86 -avd Nexus_5X_API_23 -qemu -m 4000 -enable-kvm
+/home/oak/Qt5.7.1/5.7/gcc_64/lib/libQt5CLucene.so.5.7
+
+4GB size
+
+
+# commands
+# list avd
+~/Android/Sdk/tools/bin/sdkmanager --list
+~/Android/Sdk/tools/bin/avdmanager
+
+

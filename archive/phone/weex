@@ -1,0 +1,92 @@
+# enabled gradle daemon for faster builds
+# create file and add the line below
+nn /home/oak/.gradle/gradle.properties
+org.gradle.daemon=true
+org.gradle.jvmargs=-Xmx1536M
+
+# install weex cli
+npm install -g weex-toolkit
+
+# new weex project
+# yarn does not work, must use npm
+weex init cinder
+cd weex
+npm install
+npm run serve
+
+# weex previewer
+npm install weex-previewer -g
+weex-previewer foo.vue
+
+# weexpack
+npm install -g weexpack
+
+# weexpack preq
+1) android studio installed
+android studio > configure > android sdk manager
+2)install Android SDK version 23
+3) android home set
+4) android AVD setup with marshmellow and run
+
+# set android home*
+# * when android studio is installed
+export ANDROID_HOME=$HOME/Android/Sdk
+
+# bash
+export PATH=$PATH:$ANDROID_HOME/tools
+
+# fish shell
+set PATH $PATH /home/oak/Android/Sdk/tools
+
+# verify path
+echo $PATH
+
+# AVD
+1) open project > tools > AVD manager 
+2) marshmellow selected
+
+
+# create weexpack
+weexpack create yerba
+cd yerba
+npm install
+
+# add platform
+weexpack platform add android
+weexpack platform add ios
+
+# pack build
+weexpack build android
+
+# pack app and run
+weexpack run android
+
+##=======INteGRATE ANDROID ========##
+https://weex.incubator.apache.org/v-0.10/advanced/integrate-to-android.html
+# REQUIRED
+1) SDK23
+2) SDK23 build tools
+3) Android support repo 17
+4) Android NDK
+
+5) Point Gradle to Android SDK
+a) $ANDROID_SDK must be defined
+b) $ANDROID_NDK must be defined
+
+# Building the SOURCE
+1) clone
+git clone https://github.com/alibaba/weex.git
+
+2) build apk
+a)
+Step 1: run android studio 
+Step 2: open the file of ~/weex/android/playground/build.gradle 
+Step 3: Run the Project and the Apk will auto install in your android device
+
+b)
+Step 1: enter the direction of "/weex/android/playground"
+Step 2: run the build command: ./gradlew clean assemble
+Step 3: obtain the payground APK from the direction of weex/android/playground/app/build/outputs/apk/
+Step 3: then adb install -r weex/android/playground/app/build/outputs/apk/playgroud.apk
+
+

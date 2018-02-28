@@ -1,0 +1,10 @@
+# view table information
+# user should be created via CREATE USER palantir WITH CREATEDB PASSWORD 'LOTR';
+sudo -u postgres psql
+\c [ user ]
+\d
+\dS
+\dt
+
+# query all values from table
+select * from posts;

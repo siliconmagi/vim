@@ -1,0 +1,52 @@
+# requires ocaml install via ./vim
+# install reason
+git clone https://github.com/reasonml/ReasonProject.git
+cd ReasonProject
+yarn
+
+# commands
+yarn start
+yarn reasonBuild
+yarn clean
+
+# repl
+yarn top
+
+# quit repl
+#quit;
+
+# setup vim 
+Plug 'reasonml/vim-reason-loader'
+
+# check vim local map = 1
+:echo has('localmap')
+
+" ocaml settings
+set rtp+=~/my-clone-of/ocp-indent-vim
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
+let g:vimreason_extra_args_expr_reason = '"--print-width " . ' .  "winwidth('.')"
+autocmd FileType reason map <buffer> <leader>p :ReasonPrettyPrint<CR>
+autocmd FileType reason let g:pairtools_reason_pairclamp = 1
+autocmd FileType reason let g:pairtools_reason_tagwrench = 0
+autocmd FileType reason let g:pairtools_reason_jigsaw    = 1
+autocmd FileType reason let g:pairtools_reason_autoclose  = 1
+autocmd FileType reason let g:pairtools_reason_forcepairs = 0
+autocmd FileType reason let g:pairtools_reason_closepairs = "(:),[:],{:}" . ',":"'
+autocmd FileType reason let g:pairtools_reason_smartclose = 1
+autocmd FileType reason let g:pairtools_reason_smartcloserules = '\w,(,&,\*'
+autocmd FileType reason let g:pairtools_reason_antimagic  = 1
+autocmd FileType reason let g:pairtools_reason_antimagicfield  = "Comment,String,Special"
+autocmd FileType reason let g:pairtools_reason_pcexpander = 1
+autocmd FileType reason let g:pairtools_reason_pceraser   = 1
+autocmd FileType reason let g:pairtools_reason_tagwrenchhook = 'tagwrench#BuiltinNoHook'
+autocmd FileType reason let g:pairtools_reason_twexpander = 0
+autocmd FileType reason let g:pairtools_reason_tweraser   = 0
+autocmd FileType reason let g:pairtools_reason_apostrophe = 0
+
+# set vim support
+npm run env -- vim
+
+
+
+

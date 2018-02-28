@@ -1,0 +1,7 @@
+# Create Webhook
+> Create a lambda function
+> Blueprint > none
+> Configure Triggers > none
+> Configure Function
+- Function Name: validate
+

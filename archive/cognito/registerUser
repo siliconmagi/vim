@@ -1,0 +1,48 @@
+import appConfig from '../config';
+import {
+  CognitoUser, CognitoUserAttribute,
+  CognitoUserPool
+} from 'amazon-cognito-identity-js';
+import { CognitoIdentityCredentials, Config } from 'aws-sdk';
+
+
+//cognito object creation
+// const poolData = {
+  // UserPoolId : appConfig.UserPoolId,
+  // ClientId : appConfig.ClientId
+// };
+
+// const userPool = new CognitoUserPool(poolData);
+
+// const attributeList = [];
+
+// const dataEmail = {
+  // Name : 'email',
+  // Value : 'email@mydomain.com'
+// };
+
+
+// const attributeEmail = new CognitoUserAttribute(dataEmail);
+
+// attributeList.push(attributeEmail);
+
+
+//sign up action
+// userPool.signUp('username', 'password', attributeList, null, function(err, result){
+  // if (err) {
+    // alert(err);
+    // return;
+  // }
+  // const cognitoUser = result.user;
+  // console.log('user name is ' + cognitoUser.getUsername());
+// });
+
+// debug
+// console.log(appConfig.region)
+// console.log(poolData)
+// console.log(dataEmail)
+
+# mobx
+@observable UserPoolId: string = appConfig.UserPoolId
+  @observable ClientId: string = appConfig.ClientId
+  @observable userPool = new CognitoUserPool(poolData);

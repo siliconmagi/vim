@@ -1,0 +1,6 @@
+# install starter template
+
+# addons
+yarn add -D node-sass sass-loader
+package.json
+"lint": "eslint --ext .js,.vue --ignore-path .gitignore --ignore-pattern plugins/ga.js .",

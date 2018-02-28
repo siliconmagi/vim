@@ -1,0 +1,36 @@
+# install
+npm install -g phonegap
+
+# phonegap templates
+phonegap template list
+
+# create app with react template
+phonegap create react --template react-hot-loader
+
+# create template valnub series
+vue init valnub/vue-framework7-webpack-template frame
+
+# template
+phonegap create vue --template https://github.com/hollyschinsky/phonegap-template-framework7-vue
+
+# Add Plugin
+phonegap plugin add https://github.com/bees4honey/mobile_vin_scanner#:/phonegap_vin_scanner_plugin
+
+# install mobile app
+play store > phonegap developer app
+
+# build android
+phonegap build android
+
+# apps
+chrome
+flir cloud
+keep
+maps
+spotify
+vin scanner first call online
+napa tracs
+prolink
+whatsapp
+wifi file transfer
+

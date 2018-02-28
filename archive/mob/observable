@@ -1,0 +1,50 @@
+# store
+import { observable } from 'mobx';
+
+export class Api {
+  @observable todos = ['buy milk', 'buy cheese']
+    @observable filter = ['buy milk', 'buy cheese']
+}
+
+// Cognito PoolData object
+const poolData = observable({
+UserPoolId : appConfig.UserPoolId,
+ClientId : appConfig.ClientId
+})
+
+# component
+@connect(['Api'])
+export default class Layout extends Component<MyProps, MyState> {
+
+  render({ Api }) {
+    { Api.todos }
+  }
+}
+
+# observable object
+# store
+import { observable } from 'mobx';
+const dataEmail = observable({
+Name : 'email',
+Value : ''
+});
+export { dataEmail };
+# index.tsx
+const stores = { dataEmail };
+const App = () => (
+    <Provider {...stores}>
+    <Router history={history}>
+    {views}
+    </Router>
+    </Provider>
+    )
+# component
+@connect(['dataEmail'])
+export default class Layout extends Component<MyProps, MyState> {
+  render({ dataEmail }) {
+    return (
+        {dataEmail.Value}
+        )
+  }
+}
+

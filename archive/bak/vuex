@@ -1,0 +1,9 @@
+# vuex format
+1) store: shared state, injected into components
+2) actions: components call actions to mutate state
+3) mutations: perform state mutation, 
+
+# note
+1) actions can compose 1+ mutations or perform logic to determine which mutation to call.
+2) business logic should not be in components but instead in the store
+3) when state is updated, any component with a getter, computed property, or other mapping to the store will be instantly up-to-date

@@ -1,0 +1,8 @@
+# install yarn
+npm i -g yarn
+
+# update package.json
+npm i -g npm-check-updates
+
+# update all packages
+ncu -a

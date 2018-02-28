@@ -1,0 +1,23 @@
+# install ruby
+sudo apt-get update
+sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev nodejs rbenv
+rbenv install 2.4.0
+rbenv global 2.4.0
+ruby -v
+
+# install ruby dev headers for ubuntu 16.10
+sudo apt-get install ruby-dev
+sudo gem install neovim
+
+# install nix
+$ curl https://nixos.org/nix/install | sh
+Make sure to follow the instructions output by the script. You may want to verify the integrity of the installation script using GPG:
+$ curl -O https://nixos.org/nix/install
+$ curl -O https://nixos.org/nix/install.sig
+$ gpg2 --verify ./install.sig
+$ sh ./install
+
+# install neovim with nix
+nix-env -iA nixos.neovim
+nix-env -iA nixos.python35Packages.neovim
+

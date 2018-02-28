@@ -1,0 +1,9 @@
+# check java 1.8 install
+java -version
+
+# install ammonite repl
+bash
+sudo curl -L -o /usr/local/bin/amm https://git.io/vdNv2 && sudo chmod +x /usr/local/bin/amm && amm
+
+# configure ammonite repl as shell
+mkdir -p ~/.ammonite && curl -L -o ~/.ammonite/predef.sc https://git.io/vHaKQ

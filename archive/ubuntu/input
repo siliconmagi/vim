@@ -1,0 +1,14 @@
+# list input devices gnome ubuntu 16.10
+xinput
+
+# list props
+xinput list-props <device id>
+xinput list-props 17
+
+# set prop id
+xinput set-prop <device-id> <prop-id> <prop-values>
+
+xinput --set-prop --type=int --format=8 17 288 1 1 1
+xinput set-prop 17 287 1 1 1
+ETPS/2 Elantech Touchpad Scroll Method Enabled
+xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Scroll Method Enabled" 1 1 1 

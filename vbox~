@@ -1,0 +1,8 @@
+# guest additions
+# update
+sudo apt update
+sudo apt upgrade
+sudo apt install build-essential module-assistant dkms
+
+# prepare deb 9 to build kernel module
+m-a prepare

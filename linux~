@@ -1,0 +1,62 @@
+# check processes
+service --status-all
+
+# check centos version
+cat /etc/*release
+
+# Address already in use: make_sock: could not bind to address 0.0.0.0:80
+fuser -k -n tcp 80
+
+# free memory %
+free | grep Mem | awk '{print $3/$2 * 100.0}'
+
+# memory info
+cat /proc/meminfo
+
+# get os info
+lsb_release -a
+
+# get kernel info
+uname -r
+
+# centos
+# config httpd.conf
+/usr/local/apache2/conf/httpd.conf
+
+# ssl centos
+# copy server.crt server.key
+/usr/local/apache2/conf/
+
+# customize by removing comment from line with #Include
+# conf/extra/httpd-ssl.conf
+/usr/local/apache2/conf/httpd.conf
+
+# version
+rpm --query centos-release
+
+# bloguru
+centos-release-5-10.el5.centos
+
+# logs failover
+smtp logs
+
+# Ubuntu Gnome 17.04
+
+# location of binaries
+/usr/bin/
+/usr/local/bin/
+
+# location PPA
+ls /etc/apt/sources.list.d
+
+# disk usage
+sudo apt install ncdu
+
+# empty trash
+rm -rf ~/.local/share/Trash/*
+
+# which users logged in:
+w
+
+# check permissions
+ls -lah fileOrDirectory

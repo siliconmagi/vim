@@ -1,0 +1,6 @@
+# props
+- passed from parent to child component
+- each child component must explicitly define props it expects to receive
+
+# events
+- passed from child component to parent

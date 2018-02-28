@@ -1,0 +1,41 @@
+# moltin authentication: implicit grant types
+1) ios
+2) android
+3) JS
+
+# Bearer Token: to create and modify products
+curl -X POST https://api.molt.in/oauth/access_token \
+	-d "client_id={client id}" \
+	-d "client_secret={client secret}" \
+	-d "grant_type=client_credentials"
+
+# result
+# the access_token field contains the bearer token
+# you can use it for the number of seconds listed in expires_in
+# if the system allows, this call will attempt to set an auth cookie within the HTML header
+{
+	"access_token":"XXXXX",
+	"token_type":"Bearer",
+	"identifier":"client_credentials",
+	"expires":1435690091,
+	"expires_in":3600
+}
+
+# refresh bearer token
+# The expired token that you provided in the refresh_token field can now be used for requests for another hour
+curl -X POST https://api.molt.in/oauth/access_token \
+	-d "client_id={client id}" \
+	-d "client_secret={client secret}" \
+	-d "grant_type=refresh_token"
+	-d "refresh_token=XXXX"
+
+# Using auth codes
+# The bearer token must be included in the header of all future requests, using the format below
+-H "Authorization: Bearer xxxxxxxxxx"
+
+# Making a call
+# moltin API is a restful http service
+# all requests must be made using https @ the following url
+https://api.molt.in
+
+Please make sure that you enter https://www.example.com next to @ (bare domain) and choose URL Redirect Record as the record type. Should you have any issues with configuring the record please contact our support at https://www.namecheap.com/supp

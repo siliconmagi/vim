@@ -1,0 +1,52 @@
+# preqs
+# 1) install rust
+# 2) install postgres
+# 3) install libpq: sudo apt-get install libpq-dev
+#
+# diesel cli w/o sqlite
+cargo install diesel_cli --no-default-features --features postgres
+
+# configure .env with db info
+echo DATABASE_URL=postgres://username:password@localhost/dsel > .env
+
+
+# User management
+# psql prompt requires ; @ end of statement
+sudo su postgres
+psql
+#OR
+sudo -i -u postgres psql
+CREATE USER palantir WITH CREATEDB PASSWORD 'LOTR';
+
+# maintenance
+ALTER USER dsel CREATEDB;
+DROP USER palantir;
+
+# cargo new project
+cargo new diesel_demo
+
+# v .env
+[dependencies]
+diesel = { version = "0.11.0", features = ["postgres"] }
+diesel_codegen = { version = "0.11.0", features = ["postgres"] }
+dotenv = "0.8.0"
+
+# build
+cargo build
+
+# Setup db with info above:
+# echo DATABASE_URL=postgres://username:password/diesel_demo > .env ]
+echo DATABASE_URL=postgres://dsel:dsel@localhost/dsel > .env
+
+# setup
+diesel setup
+
+# create migration for table
+# migrations allow an evolving database over time
+# each migration can be applied (up.sql) and reverted (down.sql)
+diesel migration generate create_posts
+
+# up.sql
+
+
+

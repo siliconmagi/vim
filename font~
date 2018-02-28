@@ -1,0 +1,86 @@
+# download fonts and copy to local
+mkdir -p ~/.local/share/fonts
+cp ~/Downloads/*.ttf ~/.local/share/fonts
+cp ~/Downloads/*.otf ~/.local/share/fonts
+
+
+# refresh font cache
+fc-cache -fv
+
+# install droid sans nerd font
+# patched nerd fonts @ https://github.com/ryanoasis/nerd-fonts#patched-fonts
+mkdir -p ~/.local/share/fonts
+cd ~/.local/share/fonts;and curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20for%20Powerline%20Nerd%20Font%20Complete.otf
+
+# install Lekton font
+cd ~/.local/share/fonts ;and curl -fLo "Lekton Nerd Font Complete Mono.ttf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Lekton/Regular/complete/Lekton%20Nerd%20Font%20Complete%20Mono.ttf
+
+# install Roboto font
+cd ~/.local/share/fonts ;and curl -fLo "Roboto Mono Nerd Font Complete Mono.ttf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/RobotoMono/complete/Roboto%20Mono%20Nerd%20Font%20Complete%20Mono.ttf
+
+# install Anonymice
+cd ~/.local/share/fonts ;and curl -fLo "Anonymice Powerline Nerd Font Complete Mono.ttf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/AnonymousPro/complete/Anonymice%20Powerline%20Nerd%20Font%20Complete%20Mono.ttf
+
+# install Hasklig
+cd ~/.local/share/fonts ;and curl -fLo "Hasklug Nerd Font Complete.otf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hasklig/Regular/complete/Hasklug%20Nerd%20Font%20Complete.otf
+
+# Terminus
+cd ~/.local/share/fonts ;and curl -fLo "Terminess (TTF) Nerd Font Complete.ttf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Terminus/terminus-ttf-4.40.1/Regular/complete/Terminess%20(TTF)%20Nerd%20Font%20Complete.ttf
+
+# Sauce
+cd ~/.local/share/fonts ;and curl -fLo "Sauce Code Pro Nerd Font Complete.ttf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete.ttf
+
+# knack
+cd ~/.local/share/fonts ;and curl -fLo "Knack Bold Nerd Font Complete.ttf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hack/Bold/complete/Knack%20Bold%20Nerd%20Font%20Complete.ttf
+
+#Gohu
+cd ~/.local/share/fonts ;and curl -fLo "GohuFont-Bold Nerd Font Complete.ttf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Gohu/complete/GohuFont-Bold%20Nerd%20Font%20Complete.ttf
+
+#Hurmit
+cd ~/.local/share/fonts ;and curl -fLo "Hurmit Bold Nerd Font Complete.otf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hermit/Bold/complete/Hurmit%20Bold%20Nerd%20Font%20Complete.otf
+
+cd ~/.local/share/fonts;and curl -fLo "Hurmit Light Nerd Font Complete.otf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hermit/Light/complete/Hurmit%20Light%20Nerd%20Font%20Complete.otf
+
+# Heavy
+cd ~/.local/share/fonts ;and curl -fLo "Hurmit Bold Nerd Font Complete.otf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hermit/Bold/complete/Hurmit%20Bold%20Nerd%20Font%20Complete.otf
+
+# Fura
+cd ~/.local/share/fonts ;and curl -fLo "Fura Code Bold Nerd Font Complete.otf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/FiraCode/Bold/complete/Fura%20Code%20Bold%20Nerd%20Font%20Complete.otf
+
+# Monofur
+cd ~/.local/share/fonts ;and curl -fLo "monofur for Powerline Nerd Font Complete.ttf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Monofur/Regular/complete/monofur%20for%20Powerline%20Nerd%20Font%20Complete.ttf
+
+# Monoid
+cd ~/.local/share/fonts ;and curl -fLo "Monoid Regular Nerd Font Complete.ttf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Monoid/complete/Monoid%20Regular%20Nerd%20Font%20Complete.ttf
+
+cd ~/.local/share/fonts ;and curl -fLo "M+ 1m regular Nerd Font Complete.ttf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/MPlus/Regular/complete/M%2B%201m%20regular%20Nerd%20Font%20Complete.ttf
+
+cd ~/.local/share/fonts ;and curl -fLo "mononoki-Regular Nerd Font Complete.ttf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Mononoki/complete/mononoki-Regular%20Nerd%20Font%20Complete.ttf
+
+cd ~/.local/share/fonts ;and curl -fLo "Shure Tech Mono Nerd Font Complete.ttf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/ShareTechMono/complete/Shure%20Tech%20Mono%20Nerd%20Font%20Complete.ttf
+
+cd ~/.local/share/fonts ;and curl -fLo "Space Mono Nerd Font Complete.ttf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/SpaceMono/complete/Space%20Mono%20Nerd%20Font%20Complete.ttf
+
+cd ~/.local/share/fonts ;and curl -fLo "3270-Medium Nerd Font Complete.otf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/3270/Medium/complete/3270-Medium%20Nerd%20Font%20Complete.otf
+
+cd ~/.local/share/fonts ;and curl -fLo "AurulentSansMono-Regular Nerd Font Complete.otf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/AurulentSansMono/complete/AurulentSansMono-Regular%20Nerd%20Font%20Complete.otf
+
+cd ~/.local/share/fonts ;and curl -fLo "Bitstream Vera Sans Mono Nerd Font Complete.ttf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/BitstreamVeraSansMono/Regular/complete/Bitstream%20Vera%20Sans%20Mono%20Nerd%20Font%20Complete.ttf
+
+cd ~/.local/share/fonts ;and curl -fLo "Code New Roman Nerd Font Complete.otf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/CodeNewRoman/complete/Code%20New%20Roman%20Nerd%20Font%20Complete.otf
+
+cd ~/.local/share/fonts;and curl -fLo "Iosevka Nerd Font Complete.ttf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Iosevka/Regular/complete/Iosevka%20Nerd%20Font%20Complete.ttf
+
+cd ~/.local/share/fonts;and curl -fLo "Literation Mono Powerline Nerd Font Complete.ttf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/LiberationMono/complete/Literation%20Mono%20Powerline%20Nerd%20Font%20Complete.ttf
+
+# font patcher
+# install preqs
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:fontforge/fontforge
+sudo apt-get update
+sudo apt-get install fontforge
+
+# usage
+./font-patcher PATH_TO_FONT
+./font-patcher Inconsolata.otf --fontawesome --octicons --powerlineextra --fontlinux
+

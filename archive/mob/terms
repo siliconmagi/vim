@@ -1,0 +1,4 @@
+
+@observable - mobx will trackt this data, decorate data
+
+@observer - this component's rendering can be derived from the relevant observables, do so whenever needed

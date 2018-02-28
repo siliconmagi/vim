@@ -1,0 +1,6 @@
+# most basic inferno component
+import Inferno from 'inferno';
+
+export default () => <div>Hello world live</div>
+
+

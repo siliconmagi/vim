@@ -1,0 +1,15 @@
+# install intellisense
+opam install ocp-indent merlin
+
+# install vim plugin
+let-def/ocp-indent-vim
+
+# add to neovim config
+# add this to find opam share directory + add merlin plugin subdir to current runtime path
+set rtp+=~/my-clone-of/ocp-indent-vim
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
+
+# update merlin documentation
+:execute "helptags " . substitute(system('opam config var share'),'\n$','','''') .  "/merlin/vim/doc"
+

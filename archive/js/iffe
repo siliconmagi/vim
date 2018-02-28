@@ -1,0 +1,30 @@
+JavaScript Tip: Decluttering The Global Namespace (IIFE's and the module pattern!)
+You may or may not have heard the term IIFE (often pronounced 'iffy') when working with JavaScript. I'd like to provide a little insight for those who are not very familiar with it. I'll also talk about one of its wonderful advantages: decluttering the global namespace.
+IIFE stands for Immediately Invoked Function Expression. It is not the same as a function declaration. This is a declaration:
+function myFunc() {
+// do something
+}
+Then you:
+myFunc(); // does something
+An IIFE is just as it says: Immediately Invoked. Instead of waiting for you to call it, it executes immediately. And since a function, in JS, is also an object (hence, functions are also used as 'constructors') you can use an IIFE to control scope.
+IIFE's can be used to implement the 'module pattern'. This pattern allows variables and functions to be declared in a particular scope, essentially a namespace, which is not the 'global namespace'. Say you have variables for a checker boatd two players. You may do this at the top of the script file:
+var boardWidth = 8;
+var boardHeight = 8;
+var player1Color = 'black';
+var player2Color = 'red';
+All of those variables are in the same global namespace. Should they be? Ideally, no. So how do you not pollute the global namespace? With an IIFE and the module pattern! Like this:
+var Board = (function () {
+var _width = 8;
+var _height = 8;
+return {
+// note the lack of 'this' - because _width and _height are scoped to the IIFE, and not set as properties by saying 'this._width = 8'
+width: _width;
+height: _height;
+}
+})(); // note the final () - this is what 'invokes' the function expression
+To access this IIFE ("module"):
+Board.width
+Board.height
+Simple! And you can't access the 'var' declarations at the top of the IIFE from outside the IIFE. Why? Because they are scoped to the IIFE, not in the representation given by the object literal that is the 'return' statement. Those are very much like 'private' variables in object oriented languages.
+There is also a 'revealing module pattern' and it differs from the 'module pattern', but I won't go into that here. Perhaps you can look into that, if you're interested. I've found that IIFE's and the module pattern are quite useful. Especially when you have relatively complex code and you want to keep track of what 'namespace' a variable belongs to. It adds some verbosity to the code and can be less confusing.
+Thanks for reading. Let me know if you have any questions I can help with. :-D Happy coding!

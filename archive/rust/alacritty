@@ -1,0 +1,21 @@
+# git clone
+git clone https://github.com/jwilm/alacritty.git
+cd alacritty
+rustup override set stable
+rustup update stable
+
+# install preqs for ubuntu
+sudo apt-get install cmake libfreetype6-dev libfontconfig1-dev xclip
+
+# build
+cargo build --release
+
+# desktop entry
+# or anywhere else in $PATH
+sudo cp target/release/alacritty /usr/local/bin 
+cp Alacritty.desktop ~/.local/share/applications
+
+# configuration
+vim $HOME/.config/alacritty/alacritty.yml
+increase columns to 280 for full screen
+font-size: 14

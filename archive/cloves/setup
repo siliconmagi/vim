@@ -1,0 +1,11 @@
+# setup elemental-starter
+git clone https://github.com/Metnew/vue-element-starter cloves
+cd cloves
+yarn
+rm -rf .git
+yarn generate_default_styles
+yarn generate_theme
+
+# setup egoist
+yarn global add sao
+sao vuepack anise

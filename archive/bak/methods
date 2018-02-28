@@ -1,0 +1,27 @@
+# methods
+Methods allow you to perfom an action when an event occurs
+methods:{
+    displayAlert(){
+        alert("You clicked")
+    }
+}
+<button on:click="displayAlert" value="Click me" />
+Computed methods are variables but you can apply logic to them, it's a sort of dynamic value
+computed: {
+    warningName(){
+        if(!this.name) return "You must enter a name"
+        else if(this.name.length < 6) return "The name is too short"
+        else return "Hi " + this.name
+    }
+}
+<input type="text" v-model="name" />
+<div>{{watningName}}</div>
+And finally watch allows you to track a variable and perform actions when the value of the variable changes
+watch:{
+    name(){
+        if(this.name === 'Mufasa'){
+            alert("WAT")
+        }
+    }
+}
+<input type="text" v-model="name" />

@@ -1,0 +1,18 @@
+# importing from inkscape
+create document
+
+# set id and labels all objects to animate
+Object > Object Properties
+
+# select and group objects then set id/label for group
+Object > Object Properties
+
+# save as plain.svg
+file > save > plain.svg
+
+# install svg optimizer
+npm install -g svgo
+svgo --input img/graph.svg --output img/optimised-graph.svg
+svgo --input /home/oak/Pictures/proto/proto.svg --output /home/oak/Pictures/proto/proto-min.svg
+https://cdn.rawgit.com/siliconmagi/pictures/master/proto-min.svg
+

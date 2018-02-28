@@ -1,0 +1,18 @@
+# R commands
+
+# system  {{{
+
+# variables
+x = 11
+x <- 11
+# }}}
+
+
+# regex {{{
+
+# files with string "world"
+# TRUE returns values
+# FALSE returns indices
+grep("world", object, value = FALSE)
+
+# }}}

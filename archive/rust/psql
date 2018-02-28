@@ -1,0 +1,145 @@
+# install postgres
+sudo apt-get update
+sudo apt-get install postgresql postgresql-contrib
+
+# list service on linux
+ls /etc/init.d 
+
+# check status of postgresql server
+sudo service postgresql status
+sudo service httpd start
+sudo service httpd stop
+sudo service httpd restart
+
+# By default psql creates linux user postgres to access the database
+# user postgres should not be used for other purposes like connecting to networks
+# change postgres user's password
+sudo passwd postgres
+
+# Set password for the postgres database user 
+# Will be used to connect to db via network
+# replace newpassword with a strong password
+# Note: postgres database user administers database while postgres linux user is used to access db
+su - postgres
+psql -d template1 -c "ALTER USER postgres WITH PASSWORD 'newpassword';"
+
+# create sample db as postgres linux user
+createdb mytestdb
+
+# connect to db
+psql mytestdb
+
+# create table called "employees"
+CREATE TABLE employees (employee_id int, first_name varchar, last_name varchar);
+
+# insert record into table
+INSERT INTO employees VALUES (1, 'John', 'Doe');
+
+# view contents of "employees" table
+SELECT * FROM employees;
+
+# Create postgresql roles
+# psql grants db access via roles which are used to specify privileges
+# Roles are global, do not need to be created twice to access more than one db on same server
+# Run command as postgres linux user
+# Add a new user role, prompt for password
+createuser examplerole --pwprompt
+
+# Delete user
+dropuser examplerole
+
+# Change password
+sudo -u postgres psql mytestdb
+ALTER USER "examplerole" WITH PASSWORD 'mystrongpass';
+
+# connect to db
+psql mytestdb
+
+# grant all privaledges on table "employees" to user "examplerole"
+GRANT ALL ON employees TO examplerole;
+
+# switch to postgres user
+su - postgres
+
+# connect to test db as "examplerole"
+# Note: requires -h localhost to use TCP (configured for password auth), not peer connection
+# export PGHOST=localhost to shell to remove "-h localhost" requirement
+psql -U examplerole -W mytestdb -h localhost
+
+
+# Secure local postgresql access
+
+
+# switch to postgres account and enter psql prompt
+sudo -i -u postgres psql
+
+# change password
+\password
+
+# exit
+\q
+ctrl + d
+
+# list roles
+\du
+
+# list dbs
+\l
+
+# create new role
+createuser --interactive
+
+# create user without login
+sudo -u postgres createuser --interactive
+
+# Psql assumes db has same name as role used to login
+# create db name "dsel" matching role created above
+sudo -u postgres createdb dsel
+
+# creating linux user must also have same name
+sudo adduser dsel
+
+# switch to linux user
+sudo -i -u dsel 
+
+# check connection info
+# only works only with
+# 1) linux adduser dsel
+# 2) createdb dsel
+# 3) psql createuser dsel
+\conninfo
+
+# make diesel project
+cargo new diesel_demo
+cd diesel_demo
+
+# vim Cargo.toml
+[dependencies]
+diesel = { version = "0.11.0", features = ["postgres"] }
+diesel_codegen = { version = "0.11.0", features = ["postgres"] }
+dotenv = "0.8.0" } } } }
+
+# install diesel cli
+cargo install diesel_cli
+
+# preqs
+# 1) install rust
+# 2) install postgres
+# 3) install libpq: sudo apt-get install libpq-dev
+#
+# diesel cli w/o sqlite
+cargo install diesel_cli --no-default-features --features postgres
+
+# configure .env with db info
+echo DATABASE_URL=postgres://username:password@localhost/dsel > .env
+
+# install pgadmin
+sudo apt-get install virtualenv python-pip libpq-dev python-dev
+cd
+virtualenv pgadmin4
+cd pgadmin4
+source bin/activate
+wget https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v1.4/pip/pgadmin4-1.4-py2.py3-none-any.whl
+pip install pgadmin4-1.4-py2.py3-none-any.whl
+echo "SERVER_MODE = False" >> lib/python2.7/site-packages/pgadmin4/config_local.py
+ } }

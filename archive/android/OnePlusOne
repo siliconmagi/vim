@@ -1,0 +1,30 @@
+# oneplusone arch is ARM 32bit
+# install recovery oneplusone on ubuntu 16.10
+# install preqs
+sudo apt-get install android-tools-adb
+sudo apt-get install android-tools-fastboot
+
+# reboot into fastboot mode
+connect oneplusone to computer
+unlock phone
+adb reboot bootloader
+
+# verify fastboot
+sudo fastboot devices
+
+# THIS WIPES DEVICE SO BACKUP
+# unlock device
+sudo fastboot oem unlock
+
+# FLASH RECOVERY
+cd ~/Downloads
+sudo fastboot boot openrecovery-twrp-2.8.5.1-bacon.img
+wait for reboot to TWRP
+
+# reboot from fastboot
+sudo fastboot reboot
+
+# JUST GO RECOVERY
+adb reboot bootloader
+cd ~/Downloads
+sudo fastboot boot openrecovery-twrp-2.8.5.1-bacon.img

@@ -1,0 +1,53 @@
+# install postgres
+sudo apt-get update
+sudo apt-get install postgresql postgresql-contrib
+
+# switch to postgres account and enter psql prompt
+sudo -i -u postgres psql
+
+# change password
+\password
+
+# exit
+\q
+ctrl + d
+
+# list roles
+\du
+
+# list dbs
+\l
+
+# create new role
+createuser --interactive
+
+# create user without login
+sudo -u postgres createuser --interactive
+
+# Psql assumes db has same name as role used to login
+# create db name "dsel" matching role created above
+sudo -u postgres createdb dsel
+
+# creating linux user must also have same name
+sudo adduser dsel
+
+# switch to linux user
+sudo -i -u dsel 
+
+# check connection info
+# only works only with
+# 1) linux adduser dsel
+# 2) createdb dsel
+# 3) psql createuser dsel
+\conninfo
+
+# install pgadmin
+sudo apt-get install virtualenv python-pip libpq-dev python-dev
+cd
+virtualenv pgadmin4
+cd pgadmin4
+source bin/activate
+wget https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v1.4/pip/pgadmin4-1.4-py2.py3-none-any.whl
+pip install pgadmin4-1.4-py2.py3-none-any.whl
+echo "SERVER_MODE = False" >> lib/python2.7/site-packages/pgadmin4/config_local.py
+

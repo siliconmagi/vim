@@ -1,0 +1,20 @@
+# install
+yarn global add bs-platform 
+sudo apt-get install ninja-build
+
+# ocaml package manager
+sudo apt-get install opam
+
+# use bucklescript version of compiler
+opam init
+opam update
+opam switch 4.02.3+buckle-master
+eval (opam config env)
+/* eval `opam config env` */
+
+# install from source
+git clone https://github.com/bloomberg/bucklescript
+cd bucklescript
+npm install
+
+

@@ -1,0 +1,131 @@
+
+// 1) dep: userPool
+const poolData = {
+  UserPoolId : appConfig.UserPoolId,
+  ClientId : appConfig.ClientId
+}
+
+// 1) dep: userPool
+const userPool = new CognitoUserPool(poolData);
+
+// 2) dep: attributeList
+const attributeList = [];
+
+// 2) dep: attributeList
+const dataEmail = observable({
+  Name : 'email',
+  Value : ''
+});
+
+// export class dataEmail {
+// Name: string = 'email'
+// @observable Value: string = ''
+// }
+
+// 2) dep: attributeList
+const attributeEmail = new CognitoUserAttribute(dataEmail);
+
+// 2) dep: attributeList
+attributeList.push(attributeEmail);
+
+// post: cognito sign up
+// deps: 1. userPool, 2. attributeList 3. username/passsword
+// userPool.signUp('username', 'password', attributeList, null, function(err, result){
+// if (err) {
+// alert(err);
+// return;
+// }
+// const cognitoUser = result.user;
+// console.log('user name is ' + cognitoUser.getUsername());
+// });
+
+// export default new Api
+export { dataEmail };
+
+# SignUp component
+import Inferno from 'inferno'
+import Component from 'inferno-component'
+import styled from 'styled-components';
+import { connect } from 'inferno-mobx';
+
+interface MyProps {
+  store;
+  dataEmail;
+}
+interface MyState {}
+
+//todo
+// 1) input email
+// 2) input username
+// 3) handle submit
+
+@connect(['dataEmail'])
+export default class Layout extends Component<MyProps, MyState> {
+  state = {
+    password: 'pass onInput',
+    email: 'email onInput',
+    message: 'hi',
+
+  }
+
+  handleSubmit = () => {
+    // console.log(this.props.dataEmail.Name)
+  }
+  handleEmailChange = (e) => {
+    // console.log(this.props.dataEmail.Name)
+    this.props.dataEmail.Value = e.target.value
+  }
+  handlePasswordChange = () => {
+  }
+  render({ dataEmail }) {
+    return (
+      <div>
+      <form onSubmit={this.handleSubmit}>
+      <div>{dataEmail.Value}</div>
+      <input type='text' placeholder= 'Enter Email' value={dataEmail.Value} onInput={this.handleEmailChange} />
+      <input type='password' placeholder='Password' value={this.state.message} onInput={this.handlePasswordChange} />
+      <input type="submit"/>
+      </form>
+      </div>
+    );
+  }
+};
+
+# index
+// This is the entry point for our client-side logic
+import createHistory from 'history/createHashHistory';
+import Inferno from 'inferno';
+import { Provider } from 'inferno-mobx';
+import { observable } from 'mobx';
+import { Router } from 'inferno-router';
+import views from './views';
+import { dataEmail } from './stores/Api';
+
+// We render our react app into this element
+const app = document.getElementById('app');
+const history = createHistory();
+const stores = { dataEmail };
+
+const App = () => (
+  <Provider {...stores}>
+  <Router history={history}>
+  {views}
+  </Router>
+  </Provider>
+)
+
+// const hmr: any = module;
+// if(hmr.hot) {
+  // hmr.hot.accept();
+// }
+
+if ('production' === process.env.ENV) {} else
+  {
+    const hmr: any = module;
+    if (hmr.hot) {
+      hmr.hot.accept();
+      require('inferno-devtools');
+    }
+  }
+
+  Inferno.render(<App/>, app);
